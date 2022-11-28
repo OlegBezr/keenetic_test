@@ -7,11 +7,6 @@
 #include "print_functions.h"
 
 struct SubnetLinked *range_subnets(uint32_t min, uint32_t max) {
-    if (min == 0b010111111101010000000000100000000) {
-        print_subnet((struct Subnet) {min, 32});
-        print_subnet((struct Subnet) {max, 32});
-    }
-
     if (min == max) {
         struct SubnetLinked *subnet = malloc(sizeof(struct SubnetLinked));
         subnet->subnet.ip = min;
